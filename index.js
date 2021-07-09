@@ -50,7 +50,7 @@ module.exports.FunArray = class FunArray {
     }
 
     toString() {
-        this.#Array.toString();
+        return this.#Array.toString();
     }
 
     fill(value, start, end) {
@@ -66,20 +66,13 @@ module.exports.FunArray = class FunArray {
     }
 
     atIndex(index) {
-        if (typeof index === number) {
-            return atIndex(this.#Array, index);
-        }
-        return new Error("Incorrect datatype for index");
+        return atIndex(this.#Array, index);
     }
 
     //Modifying Elements
 
     removeAt(index) {
-        if (typeof index === number) {
-            this.#Array.splice(index, 1);
-        } else {
-            throw new Error("Incorrect datatype for index");
-        }
+        this.#Array.splice(index, 1);
     }
 
     remove(value) {
@@ -137,12 +130,12 @@ module.exports.FunArray = class FunArray {
 
     //Fun methods
 
-    replace(from, to, occurence) {
+    replace(Old, New, occurence) {
         let count = 0;
         if (arguments.length == 2) {
             for (let i = 0; i < this.#Array.length; i++) {
-                if (this.#Array[i] === from) {
-                    this.#Array[i] = to;
+                if (this.#Array[i] === Old) {
+                    this.#Array[i] = New;
                     break;
                 }
             }
@@ -150,25 +143,25 @@ module.exports.FunArray = class FunArray {
             for (let i = 0; i < this.#Array.length; i++) {
                 if (count === occurence) break;
 
-                if (this.#Array[i] === from) {
-                    this.#Array[i] = to;
+                if (this.#Array[i] === Old) {
+                    this.#Array[i] = New;
                     count++;
                 }
             }
         } else {
-            throw new Error("Many number of arguments");
+            throw new Error(" Too many number of arguments");
         }
     }
 
-    replaceAll(from, to) {
+    replaceAll(Old, New) {
         if (arguments.length == 2) {
             for (let i = 0; i < this.#Array.length; i++) {
-                if (this.#Array[i] === from) {
-                    this.#Array[i] = to;
+                if (this.#Array[i] === Old) {
+                    this.#Array[i] = New;
                 }
             }
         } else {
-            throw new Error("Many number of arguments");
+            throw new Error(" Too many number of arguments");
         }
     }
 

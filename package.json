@@ -1,6 +1,6 @@
 {
     "name": "@jitiendran/funarray",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "This is a npm package with fun and easy array operation",
     "main": "index.js",
     "scripts": {
@@ -15,7 +15,7 @@
         "Javascript"
     ],
     "author": "Jitiendran",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/jitiendran/funarray-package/issues"
     },
