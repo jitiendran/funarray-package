@@ -2,10 +2,10 @@
     "name": "@jitiendran/funarray",
     "version": "1.0.0",
     "description": "This is a npm package with fun and easy array operation",
-    "main": "src/index.js",
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node src/index.js"
+        "start": "node index.js"
     },
     "repository": {
         "type": "git",

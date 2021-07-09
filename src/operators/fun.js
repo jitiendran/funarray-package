@@ -63,3 +63,21 @@ module.exports.removeWhere = (array, expression) => {
 
     array.splice(index, 1);
 };
+
+module.exports.findWhere = (array, expression) => {
+    const exp = String(expression).trim();
+    const operator = findOperator(exp);
+    const arr = exp.split(operator);
+
+    const key = arr[0].trim();
+    const value = arr[arr.length - 1];
+
+    let result = [];
+
+    for (let i = 0; i < array.length; i++) {
+        if (performOperation(array[i][key], operator, value)) {
+            result.push(array[i]);
+        }
+    }
+    return result;
+};
