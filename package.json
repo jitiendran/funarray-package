@@ -1,0 +1,23 @@
+{
+    "name": "@jitiendran/funarray",
+    "version": "1.0.0",
+    "description": "This is a npm package with fun and easy array operation",
+    "main": "src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jitiendran/funarray-package.git"
+    },
+    "keywords": [
+        "Javascript"
+    ],
+    "author": "Jitiendran",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jitiendran/funarray-package/issues"
+    },
+    "homepage": "https://github.com/jitiendran/funarray-package#readme"
+}
