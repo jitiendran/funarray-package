@@ -261,8 +261,8 @@ Output
 ]
 ```
 
-### 19. Sort the Array in des
-cending Order
+### 19. Sort the Array in descending order
+
 
 ```js
 const num = new FunArray(4, 2, 3, 3);
