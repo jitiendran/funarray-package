@@ -58,7 +58,7 @@ let fruit = fruits.atIndex(0); //returns value
 ```js
 const index = fruits.indexOf('Apple') //returns index
 
-let fruit = fruits[index].
+let fruit = fruits[index]
 ```
 
 ### 3. Looping through array
@@ -261,7 +261,8 @@ Output
 ]
 ```
 
-### 19. Sort the Array in ascending Order
+### 19. Sort the Array in des
+cending Order
 
 ```js
 const num = new FunArray(4, 2, 3, 3);
