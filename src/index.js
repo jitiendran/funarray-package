@@ -1,6 +1,6 @@
 const { indexOf, atIndex } = require("./operators/accessing");
-
-module.exports = class FunArray {
+const { removeWhere } = require("./operators/fun");
+module.exports.FunArray = class FunArray {
     #Array = [];
 
     constructor() {
@@ -20,7 +20,7 @@ module.exports = class FunArray {
         return this.#Array.length;
     }
 
-    //add or remove items
+    //Add or Remove items
 
     push(value) {
         this.#Array.push(value);
@@ -39,7 +39,9 @@ module.exports = class FunArray {
     }
 
     unshift() {
-        this.#Array.unshift(arguments);
+        for (let i = 0; i < arguments.length; i++) {
+            this.#Array.unshift(arguments[i]);
+        }
     }
 
     //Accessing elelments
@@ -49,7 +51,31 @@ module.exports = class FunArray {
     }
 
     atIndex(index) {
-        return atIndex(this.#Array, index);
+        if (typeof index === number) {
+            return atIndex(this.#Array, index);
+        }
+        return new Error("Incorrect datatype for index");
+    }
+
+    //Removing Elements
+
+    removeAt(index) {
+        if (typeof index === number) {
+            this.#Array.splice(index, 1);
+        } else {
+            throw new Error("Incorrect datatype for index");
+        }
+    }
+
+    remove(value) {
+        const index = this.#Array.indexOf(value);
+        this.#Array.splice(index, 1);
+    }
+
+    //Object Array removing
+
+    removeWhere(expression) {
+        removeWhere(this.#Array, expression);
     }
 
     //Fun methods
@@ -58,5 +84,9 @@ module.exports = class FunArray {
         for (let i = 0; i < arguments.length; i++) {
             this.#Array.push(arguments[i]);
         }
+    }
+
+    findAndUpdate(index, value) {
+        this.#Array[index] = value;
     }
 };
